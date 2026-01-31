@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用两种 Step 的综合示例 | MdPress文档</title>
+    
+    <meta name="description" content="MdPress编写、构建的静态站点、">
+    
+    
+    <meta name="keywords" content="MdPress, 站点生成, Markdown站点生成, 静态站点生成">
+    
+    
+    <meta name="layout" content="home">
+    
+    
+    <meta name="tag" content="">
+    
+    
+    <link rel="stylesheet" href="../../assets/style.css?v=1769835612184">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+    <div class="Layout">
+        <header class="VPNav">
+            <div class="VPNavBar">
+                <div class="container">
+                    <div class="title">
+                        <a href="../../index.html">MdPress文档</a>
+                    </div>
+                    <div class="content">
+                        <nav class="nav-links">
+                            
+                                
+                                    <div class="nav-item">
+                                        <a class="nav-link" href="../../changelog/index.html">Changelog</a>
+                                    </div>
+                                
+                                    <div class="nav-item">
+                                        <a class="nav-link" href="../../docs/index.html">Docs</a>
+                                    </div>
+                                
+                            
+                        </nav>
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <main class="VPContent is-home">
+                <div class="VPHome">
+                    
+                    <section class="VPHero">
+                        <div class="container">
+                            <div class="main">
+                                <h1 class="name"><span class="clip">我的框架</span></h1>
+                                <p class="text">一份同时演示 Tab Step 和 List Step 的文档</p>
+                                <p class="tagline">通过 Frontmatter 自动生成交互式步骤组件</p>
+                                
+                                <div class="actions">
+                                    
+                                    <div class="action">
+                                        <a class="action-btn primary" href="https://example.com/quickstart">
+                                            快速开始
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="action">
+                                        <a class="action-btn secondary" href="https://example.com/docs">
+                                            查看文档
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </section>
+                    
+
+                    
+                    <section class="VPFeatures">
+                        <div class="container">
+                            <div class="items">
+                                
+                                <div class="item">
+                                    <div class="VPFeature">
+                                        
+                                        <h2 class="title">Tab 步骤</h2>
+                                        <p class="details">使用 kind: tab 展示多平台、多语言等可切换内容。</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="item">
+                                    <div class="VPFeature">
+                                        
+                                        <h2 class="title">List 步骤</h2>
+                                        <p class="details">使用 kind: list 展示线性执行的任务列表。</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </section>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    <div class="vp-doc container">
+                        
+                        <div class="mdp-step-timeline">
+                            
+                            <div class="mdp-step-item">
+                                <div class="mdp-step-item-index">1</div>
+                                <div class="mdp-step-item-content">
+                                    <h2 class="mdp-step-title">安装依赖</h2>
+                                    
+                                    <div class="mdp-step-tabs">
+                                        <div class="mdp-step-tabs-nav">
+                                            
+                                            <button class="mdp-step-tab mdp-step-tab-active" 
+                                                    onclick="switchStepTab(this, 'install', 0)">
+                                                使用 NPM
+                                            </button>
+                                            
+                                            <button class="mdp-step-tab " 
+                                                    onclick="switchStepTab(this, 'install', 1)">
+                                                使用 pnpm
+                                            </button>
+                                            
+                                            <button class="mdp-step-tab " 
+                                                    onclick="switchStepTab(this, 'install', 2)">
+                                                使用 Yarn
+                                            </button>
+                                            
+                                        </div>
+                                        <div class="mdp-step-tab-body">
+                                            
+                                            <div class="mdp-step-tab-content" id="install-tab-0" style="display: block">
+                                                
+                                                <p class="mdp-step-tab-description">在项目根目录运行以下命令安装依赖：
+
+```bash
+npm install
+```
+</p>
+                                                
+                                                
+                                            </div>
+                                            
+                                            <div class="mdp-step-tab-content" id="install-tab-1" style="display: none">
+                                                
+                                                <p class="mdp-step-tab-description">如果你更喜欢 pnpm，可以使用：
+
+```bash
+pnpm install
+```
+</p>
+                                                
+                                                
+                                                <a href="https://pnpm.io" class="mdp-step-tab-link" target="_blank">pnpm 官方文档 →</a>
+                                                
+                                            </div>
+                                            
+                                            <div class="mdp-step-tab-content" id="install-tab-2" style="display: none">
+                                                
+                                                <p class="mdp-step-tab-description">或者选择 Yarn：
+
+```bash
+yarn
+```
+</p>
+                                                
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mdp-step-warning">
+                                        <span class="mdp-step-warning-icon">!</span>
+                                        <span class="mdp-step-warning-text">请选择你常用的包管理器（Node.js &gt;= 16）</span>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="mdp-step-item">
+                                <div class="mdp-step-item-index">2</div>
+                                <div class="mdp-step-item-content">
+                                    <h2 class="mdp-step-title">启动与构建</h2>
+                                    
+                                    <ol class="mdp-step-list">
+                                        
+                                        <li class="mdp-step-list-item">
+                                            <div class="mdp-step-list-title">启动开发环境</div>
+                                            
+                                            <div class="mdp-step-list-details">运行开发服务，并在浏览器中预览：
+
+```bash
+npm run dev
+```
+
+打开终端中提示的本地地址（通常是 http://localhost:5173）。
+</div>
+                                            
+                                        </li>
+                                        
+                                        <li class="mdp-step-list-item">
+                                            <div class="mdp-step-list-title">运行 TypeScript 检查</div>
+                                            
+                                            <div class="mdp-step-list-details">确保类型检查通过：
+
+```bash
+npm run typecheck
+```
+</div>
+                                            
+                                        </li>
+                                        
+                                        <li class="mdp-step-list-item">
+                                            <div class="mdp-step-list-title">构建生产包</div>
+                                            
+                                            <div class="mdp-step-list-details">进行生产构建，验证构建是否成功：
+
+```bash
+npm run build
+```
+</div>
+                                            
+                                        </li>
+                                        
+                                    </ol>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <p>上面的 Frontmatter 会在预览中渲染出：</p>
+<ol>
+<li>顶部 Hero 区（如果你已经绑定了 hero 渲染逻辑）</li>
+<li>一组特性卡片（来自 <code>features</code>）</li>
+<li>一个 <strong>“安装依赖”</strong> 的 Tab Step，支持 NPM / pnpm / Yarn 三个切换选项</li>
+<li>一个 <strong>“启动与构建”</strong> 的 List Step，用于指导用户完整走完本地开发到生产构建的流程</li>
+</ol>
+<p>正文部分依然是普通 Markdown，你可以在这里继续写使用说明、截图、注意事项等内容。</p>
+                    </div>
+                </div>
+            </main>
+        
+    </div>
+    <script>
+        (function() {
+            // Hamburger Menu
+            var menuToggle = document.querySelector('.menu-toggle');
+            var body = document.body;
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    if (body.classList.contains('nav-open')) {
+                        body.classList.remove('nav-open');
+                    } else {
+                        body.classList.add('nav-open');
+                    }
+                });
+            }
+
+            // Dark Mode Toggle
+            var appearanceToggle = document.querySelector('.VPSwitchAppearance');
+            var sunIcon = document.querySelector('.VPSwitchAppearance .sun');
+            var moonIcon = document.querySelector('.VPSwitchAppearance .moon');
+            
+            function updateIcon(isDark) {
+                if (sunIcon) sunIcon.style.display = isDark ? 'block' : 'none';
+                if (moonIcon) moonIcon.style.display = isDark ? 'none' : 'block';
+            }
+
+            // Init icon
+            updateIcon(document.documentElement.classList.contains('dark'));
+
+            if (appearanceToggle) {
+                appearanceToggle.addEventListener('click', function() {
+                    var isDark = document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('mdpress-theme', isDark ? 'dark' : 'light');
+                    updateIcon(isDark);
+                });
+            }
+
+
+            // Scroll Spy & TOC Features
+            (function() {
+                var contentDoc = document.querySelector('.VPContentDoc .vp-doc');
+                if (!contentDoc) return;
+
+                var headers = Array.from(contentDoc.querySelectorAll('h2[id], h3[id]'));
+                var outlineLinks = document.querySelectorAll('.VPRightSidebar .outline-link');
+                var activeId = '';
+                var isClickScrolling = false; // Flag to prevent observer updates during click scroll
+
+                // Throttle Utility
+                function throttle(func, limit) {
+                    var inThrottle;
+                    return function() {
+                        var args = arguments;
+                        var context = this;
+                        if (!inThrottle) {
+                            func.apply(context, args);
+                            inThrottle = true;
+                            setTimeout(function() { inThrottle = false; }, limit);
+                        }
+                    }
+                }
+
+                // Update Active State in Sidebar
+                function updateSidebar(id) {
+                    if (!id || isClickScrolling) return;
+                    if (activeId === id) return;
+                    
+                    activeId = id;
+                    
+                    // Update URL hash without jumping (throttled)
+                    updateHash(id);
+
+                    // Update classes
+                    var activeLink = null;
+                    outlineLinks.forEach(function(link) {
+                        link.classList.remove('active');
+                        var href = link.getAttribute('href');
+                        if (href && (href === '#' + id || decodeURIComponent(href) === '#' + id)) {
+                            link.classList.add('active');
+                            activeLink = link;
+                        }
+                    });
+
+                    // Auto-scroll sidebar
+                    if (activeLink) {
+                        var sidebarContent = document.querySelector('.VPRightSidebar-content');
+                        if (sidebarContent) {
+                            var linkRect = activeLink.getBoundingClientRect();
+                            var sidebarRect = sidebarContent.getBoundingClientRect();
+                            if (linkRect.top < sidebarRect.top + 32) {
+                                sidebarContent.scrollTop += (linkRect.top - sidebarRect.top - 32);
+                            } else if (linkRect.bottom > sidebarRect.bottom - 32) {
+                                sidebarContent.scrollTop += (linkRect.bottom - sidebarRect.bottom + 32);
+                            }
+                        }
+                    }
+                }
+
+                // Throttled Hash Update
+                var updateHash = throttle(function(id) {
+                    if (history.replaceState) {
+                        history.replaceState(null, null, '#' + id);
+                    }
+                }, 300);
+
+                // IntersectionObserver for Scroll Spy
+                if (window.IntersectionObserver && headers.length > 0) {
+                    var observerOptions = {
+                        root: null,
+                        rootMargin: '-100px 0px -60% 0px', // Trigger when header is near top
+                        threshold: 0
+                    };
+
+                    var observer = new IntersectionObserver(function(entries) {
+                        // Find the entry that is intersecting and closest to top
+                        // Or simply: if an entry intersects, it's a candidate.
+                        // We need to handle direction.
+                        // A simple heuristic: The last intersecting entry in the list (bottom-most in DOM) 
+                        // that is currently intersecting is usually the one "in view" if we look at the top area.
+                        // But with -60% bottom margin, we only see the top part of screen.
+                        
+                        // Let's filter visible entries
+                        var visibleEntries = entries.filter(function(e) { return e.isIntersecting; });
+                        
+                        if (visibleEntries.length > 0) {
+                            // If multiple are visible in the top strip, usually the first one (top-most) is the one we want?
+                            // No, if we have [H2 ... H3], and both are in strip, H2 is above H3.
+                            // If we scroll down, H2 leaves, H3 remains.
+                            // So we pick the one with smallest boundingClientRect.top that is > 0?
+                            // Let's just pick the first intersecting entry from the DOM order.
+                            
+                            // We need to map entries back to DOM order
+                            var visibleIds = visibleEntries.map(function(e) { return e.target.id; });
+                            
+                            // Find the first header in DOM that is in visibleIds
+                            var firstVisible = headers.find(function(h) { return visibleIds.includes(h.id); });
+                            if (firstVisible) {
+                                updateSidebar(firstVisible.id);
+                            }
+                        } else {
+                            // If no headers are in the strip (e.g. we are inside a long section),
+                            // we should find the last header that is ABOVE the viewport.
+                            // IntersectionObserver doesn't give us "above" vs "below" easily without check.
+                            // Fallback to checking positions for all headers if IO comes up empty?
+                            // Or simpler: Just rely on the "enter" events.
+                            // But "enter" events miss the "scrolled past" case on load.
+                            
+                            // Let's use a hybrid: On IO callback, if nothing intersecting, check positions.
+                            checkActivePosition();
+                        }
+                    }, observerOptions);
+
+                    headers.forEach(function(header) { observer.observe(header); });
+                    
+                    // Initial check
+                    checkActivePosition();
+                } else {
+                    // Fallback for no IO
+                    window.addEventListener('scroll', throttle(checkActivePosition, 100));
+                }
+
+                function checkActivePosition() {
+                    if (isClickScrolling) return;
+                    
+                    var topOffset = 100;
+                    var currentActive = null;
+                    
+                    // Check if at bottom
+                    if ((window.innerHeight + Math.ceil(window.scrollY)) >= document.body.offsetHeight - 10) {
+                        if (headers.length > 0) currentActive = headers[headers.length - 1];
+                    } else {
+                        // Find last header above topOffset
+                        for (var i = 0; i < headers.length; i++) {
+                            var rect = headers[i].getBoundingClientRect();
+                            if (rect.top <= topOffset) {
+                                currentActive = headers[i];
+                            } else {
+                                break; // Headers are ordered, so we can stop
+                            }
+                        }
+                    }
+
+                    if (currentActive) {
+                        updateSidebar(currentActive.id);
+                    } else if (headers.length > 0) {
+                        // If no header is above (at very top), highlight first
+                         updateSidebar(headers[0].id);
+                    }
+                }
+
+                // Smooth Scroll on Click
+                document.querySelectorAll('.VPRightSidebar .outline-link').forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var href = this.getAttribute('href');
+                        if (!href || !href.startsWith('#')) return;
+                        var id = href.substring(1);
+                        var target = document.getElementById(id) || document.getElementById(decodeURIComponent(id));
+                        
+                        if (target) {
+                            isClickScrolling = true;
+                            // Remove active from others, add to this
+                            outlineLinks.forEach(function(l) { l.classList.remove('active'); });
+                            this.classList.add('active');
+                            activeId = id;
+                            updateHash(id);
+
+                            var offset = 80; // Nav height + padding
+                            var top = target.getBoundingClientRect().top + window.scrollY - offset;
+                            
+                            window.scrollTo({
+                                top: top,
+                                behavior: 'smooth'
+                            });
+
+                            // Re-enable observer after scroll (approximate duration)
+                            setTimeout(function() { isClickScrolling = false; }, 1000);
+                        }
+                    });
+                });
+
+                // Keyboard Navigation
+                document.addEventListener('keydown', function(e) {
+                    // Only if sidebar exists
+                    if (outlineLinks.length === 0) return;
+                    
+                    // Up/Down arrows
+                    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+                        // Find current active index
+                        var currentIndex = -1;
+                        for (var i = 0; i < outlineLinks.length; i++) {
+                            if (outlineLinks[i].classList.contains('active')) {
+                                currentIndex = i;
+                                break;
+                            }
+                        }
+
+                        if (currentIndex === -1 && outlineLinks.length > 0) currentIndex = 0;
+
+                        var nextIndex = currentIndex;
+                        if (e.key === 'ArrowDown') {
+                            nextIndex = Math.min(currentIndex + 1, outlineLinks.length - 1);
+                        } else if (e.key === 'ArrowUp') {
+                            nextIndex = Math.max(currentIndex - 1, 0);
+                        }
+
+                        if (nextIndex !== currentIndex) {
+                            e.preventDefault();
+                            outlineLinks[nextIndex].click(); // Trigger the click handler
+                        }
+                    }
+                });
+
+            })();
+
+            // Layout Fixer
+            function fixLayout() {
+                // Force Sidebar Top Position
+                var sidebar = document.querySelector('.VPSidebar');
+                if (sidebar) {
+                     sidebar.style.setProperty('top', '64px', 'important');
+                }
+                
+                // Force Right Sidebar Top Position
+                var rightSidebar = document.querySelector('.VPRightSidebar');
+                if (rightSidebar) {
+                     rightSidebar.style.setProperty('top', '64px', 'important');
+                }
+            }
+            window.addEventListener('resize', fixLayout);
+            window.addEventListener('load', function() {
+                fixLayout();
+                setTimeout(fixLayout, 100);
+            });
+            fixLayout();
+
+            // Move Category/Tag to below Title
+            function moveMeta() {
+                var doc = document.querySelector('.vp-doc');
+                if (doc) {
+                    var title = doc.querySelector('h1');
+                    var meta = doc.querySelector('.meta-info');
+                    if (title && meta) {
+                        title.after(meta);
+                        meta.style.marginBottom = '24px';
+                        meta.style.marginTop = '16px';
+                        meta.style.display = 'block'; // Ensure visibility
+                    } else if (meta && !title) {
+                        // If no title found (rare), maybe try to insert at top or keep as is?
+                        // For now, let's just ensure it's visible.
+                        meta.style.marginBottom = '24px';
+                    }
+                }
+            }
+            
+            // Execute immediately and on load/DOMReady
+            moveMeta();
+            window.addEventListener('DOMContentLoaded', moveMeta);
+            window.addEventListener('load', moveMeta);
+
+            // Sidebar Toggle
+            document.querySelectorAll('.VPSidebar .group-header').forEach(function(header) {
+                header.addEventListener('click', function() {
+                    var group = header.parentElement;
+                    group.classList.toggle('collapsed');
+                });
+            });
+        })();
+    </script>
+    <script>
+        function switchStepTab(button, stepId, tabIndex) {
+            const tabsContainer = button.closest('.mdp-step-tabs');
+            const buttons = tabsContainer.querySelectorAll('.mdp-step-tab');
+            buttons.forEach(btn => btn.classList.remove('mdp-step-tab-active'));
+            button.classList.add('mdp-step-tab-active');
+            
+            const contents = tabsContainer.querySelectorAll('.mdp-step-tab-content');
+            contents.forEach(content => content.style.display = 'none');
+            
+            const targetContent = tabsContainer.querySelector(`#${stepId}-tab-${tabIndex}`);
+            if (targetContent) {
+                targetContent.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
